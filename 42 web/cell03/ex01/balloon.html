@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballon</title>
+
+</head>
+
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 200px;
+        }
+    
+        .balloon{
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 180px;
+                
+            }
+    </style>
+
+<body>
+    <button class="balloon" id="balloon" onclick="clickBalloon()" onmouseover="over()" onmouseleave="leave()"></button>
+</body>
+
+<script>
+
+    let balloon_size = 200;
+    let ball = document.getElementById("balloon")
+    ball.style.backgroundColor = "red"
+   
+    function clickBalloon(){ 
+        
+        if (ball.style.width == "420px"){
+            balloon_size = 200
+        }
+        balloon_size += 10;
+        let new_balloon_size = balloon_size.toString();
+
+        ball.style.width = new_balloon_size + "px"
+        ball.style.height = new_balloon_size + "px"
+
+       
+        if(ball.style.backgroundColor == "red"){
+            ball.style.backgroundColor = "green";
+        }
+        else if(ball.style.backgroundColor == "green"){
+            ball.style.backgroundColor = "blue";
+        }
+        else if(ball.style.backgroundColor == "blue"){
+            ball.style.backgroundColor = "red";
+        }
+
+    }
+
+    function over(){
+        if(ball.style.width > "200"){
+        balloon_size -= 5;
+        let new_balloon_size = balloon_size.toString();
+
+        ball.style.width = new_balloon_size + "px"
+        ball.style.height = new_balloon_size + "px"
+        }
+    }
+
+    function leave(){
+
+        if (ball.style.width == "420px"){
+            balloon_size = 200
+        }
+        if(ball.style.width >= "200"){
+        balloon_size += 5;
+        let new_balloon_size = balloon_size.toString();
+
+        ball.style.width = new_balloon_size + "px"
+        ball.style.height = new_balloon_size + "px"
+        }
+     
+        if(ball.style.backgroundColor == "red"){
+            ball.style.backgroundColor = "blue";
+        }
+        else if(ball.style.backgroundColor == "blue"){
+            ball.style.backgroundColor = "green";
+        }
+        else if(ball.style.backgroundColor == "green"){
+            ball.style.backgroundColor = "red";
+        }
+
+    }
+
+   
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon</title>
+    <script 
+        src="https://code.jquery.com/jquery-3.6.1.js" 
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div id="ball" style="width: 200px;height: 200px;background-color: red;border-radius: 50%;cursor: pointer;"></div>
+</body>
+    <script>
+        $(document).ready(()=>{
+            let diameter = 200
+            let red = "rgb(255, 0, 0)"
+            let green = "rgb(0, 255, 0)"
+            let blue = "rgb(0, 0, 255)"
+            $("#ball").click(()=>{
+                let ballW = $("#ball").css("width")
+                let ballH = $("#ball").css("height")
+                let ballColor = $("#ball").css("background-color")
+                console.log(ballColor)
+                console.log(diameter)
+                if (ballW < "420px") {
+                    diameter += 10
+                    let newDi = diameter.toString()
+                    $("#ball").css("width", diameter + "px")
+                    $("#ball").css("height", diameter + "px")
+                }
+                else if (ballW == "420px") {
+                    diameter = 200
+                    $("#ball").css("width", "200px")
+                    $("#ball").css("height", "200px")
+                }
+                if (ballColor == red) {
+                    $("#ball").css("background-color", green)
+                }
+                else if (ballColor == green) {
+                    $("#ball").css("background-color", blue)
+                }
+                else if (ballColor == blue) {
+                    $("#ball").css("background-color", red)
+                }
+            })
+
+            $("#ball").mouseleave(()=>{
+                let ballW = $("#ball").css("width")
+                let ballH = $("#ball").css("height")
+                let ballColor = $("#ball").css("background-color")
+                if (ballW > "200px") {
+                    diameter -= 5
+                    let newDi = diameter.toString()
+                    $("#ball").css("width", diameter + "px")
+                    $("#ball").css("height", diameter + "px")
+                }
+                if (ballColor == red) {
+                    $("#ball").css("background-color", blue)
+                }
+                else if (ballColor == green) {
+                    $("#ball").css("background-color", red)
+                }
+                else if (ballColor == blue) {
+                    $("#ball").css("background-color", green)
+                }
+            })
+        })
+    </script>
+</html>

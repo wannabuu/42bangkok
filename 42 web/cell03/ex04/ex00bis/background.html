@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="background.css">
+<title>background</title>
+<script 
+    src="https://code.jquery.com/jquery-3.6.1.js" 
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
+    crossorigin="anonymous">
+</script>
+</head>
+<body id="button">
+    <button type="button" id="button">Click me!</button>
+</body>
+
+<script>
+    $(document).ready(()=>{
+      $("#button").click(()=>{
+        let randColor = Math.floor(Math.random()*16777215).toString(16);
+        $("body").css("background-color", "#" + randColor)
+      });
+    });
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>calculator</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="num1">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="num2">
+        <button onclick="calculate()">Try me!</button>
+
+        <script>
+            function calculate(){
+                let num1 = parseInt(document.getElementById("num1").value);
+                let num2 =parseInt(document.getElementById("num2").value);
+                let oper =document.getElementById("operator").value;
+                let result;
+
+                if(num1 >= 0 && num2 >= 0){
+                    switch(oper){
+                        case "+":
+                            result = num1 + num2
+                            alert(result);
+                            console.log(result);
+                            break;
+                        case "-":
+                            result = num1 - num2
+                            alert(result);
+                            console.log(result);
+                            break;
+                        case "*":
+                            result = num1 * num2
+                            alert(result);
+                            console.log(result);
+                            break;
+                        case "/":
+                            if(num2 == 0){
+                                alert("It's over 9000!");
+                            }
+                            result = num1 / num2
+                            alert(result);
+                            console.log(result);
+                            break;
+                        case "%":
+                            if(num2 == 0){
+                                alert("It's over 9000!");
+                            }
+                            result = num1 % num2
+                            alert(result);
+                            console.log(result);
+                            break;
+                    }
+                }else if (num1 < 0 || num2 < 0 || isNaN(num1) || isNaN(num2)){
+                    alert("Error :(")
+                }
+            }
+
+            setInterval(function () {
+                alert("Pleaes, use me...");
+            }, 30000);
+
+        </script>
+    </body>
+</html>

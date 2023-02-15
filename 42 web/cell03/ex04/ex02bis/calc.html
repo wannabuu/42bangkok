@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script 
+        src="https://code.jquery.com/jquery-3.6.1.js" 
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="leftValue" name="leftValue">
+        <select id="operators" name="operators">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightValue" name="rightValue">
+        <input type="submit" value="Try me!">
+    </form>
+</body>
+    <script>
+        $(document).ready(()=>{
+            $("form").submit(()=>{
+
+                let leftOp = parseFloat($("#leftValue").val())
+                let rightOp = parseFloat($("#rightValue").val())
+                let op = $("#operators").val();
+                if ((leftOp >= 0) && (rightOp >= 0)) {
+                    if (op == "+") {
+                        result = leftOp + rightOp
+                    }
+                    else if (op == "-") {
+                        result = leftOp - rightOp
+                    }
+                    else if (op == "*") {
+                        result = leftOp * rightOp
+                    }
+                    else if ((op == "/") && (rightOp != 0)) {
+                        result = leftOp / rightOp
+                    }
+                    else if ((op == "%") && (rightOp != 0)) {
+                        result = leftOp % rightOp
+                    }
+                    else if ((op == "/" || op == "%") && (rightOp == 0)) {
+                        result = "It’s over 9000!"
+                    }
+                    console.log(result)
+                    alert(result)
+                }
+                else {
+                    alert("Error :(")
+                }
+            })
+        })
+        let result
+
+    setInterval(function() {
+        alert("Please, use me...")
+    }, 30000);
+    </script>
+</html>
