@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>barju</title>
+    <link href="webpagestyle.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Barju</h1>
+        <h2>This webpage for 42 bangkok</h2>
+        <h3 id="clock"></h3>
+        <hr>
+        <br>
+        <div class="contain">
+            <a class="button-28" href="sprasura.html" role="button">sprasura</a>
+            <a class="button-28" href="napyords.html" role="button">napyords</a>
+            
+        </div>
+
+
+
+        
+    </header>
+
+    <script>
+        function updateTime() {
+            var now = new Date();
+
+            document.getElementById("clock").textContent = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+    </script>
+
+    <p id="clock"></p>
+
+
+
+
+</body>
+
+</html>

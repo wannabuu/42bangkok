@@ -1,0 +1,268 @@
+
+
+.hoverable {
+  display: inline-block;
+  backface-visibility: hidden;
+  vertical-align: middle;
+  position: relative;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  tranform: translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hoverable:before {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  content: "";
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
+  /* W3C */
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.hoverable:hover,
+.hoverable:active,
+.hoverable:focus {
+  transform: translateY(-5px);
+}
+
+.hoverable:hover:before,
+.hoverable:active:before,
+.hoverable:focus:before {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+@keyframes bounce-animation {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.bounce {
+  animation-name: bounce-animation;
+  animation-duration: 2s;
+}
+
+/*everything below here is just setting up the page, so dont worry about it */
+@media (min-width: 768px) {
+  .navbar {
+    text-align: center !important;
+    float: none;
+    display: inline-block;
+  }
+}
+
+body {
+  background-color: #1d2026;
+  font-weight: 600;
+  text-align: center !important;
+  color: #9d9d9d;
+  padding: 0px;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+
+nav {
+  background: black !important;
+  text-transform: uppercase;
+  width: 100%;
+  
+  
+}
+
+nav li {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+nav li a {
+  transition: 0.5s color ease-in-out;
+}
+
+.page-title {
+  opacity: 0.75 !important;
+}
+
+
+
+.text-container{
+  display: flex;
+  
+  
+}
+
+.text-box{
+  text-align: start;
+  padding-left: 20px;
+  width: 50%;
+  
+  
+}
+
+img.rounded-corners {
+  width: 40%;
+  margin-right: 50px;
+  
+  border-radius: 40px 40px;
+  
+}
+
+#exp{
+  padding-top: auto;
+}
+
+#contact{
+  text-align: center;
+}
+
+.progress {
+  height: 20px;
+    border-radius:20px;
+
+}
+
+.progress .skill .val {
+  float: right;
+  font-style: normal;
+  margin: 0 20px 0 0;
+}
+span {
+  
+    display:block;
+    position: relative;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform:uppercase;
+    color: #888888;
+  line-height: 17px;
+  margin-bottom:5px;
+}
+.progress-bar {
+  text-align: left;
+
+  border-radius:20px;
+  transition-duration: 3s;
+}
+
+.text-box1{
+  align-items: center;
+  text-align: center;
+}
+
+#contact .text-box1 img{
+  margin: 30px;
+  
+}
+
+.skill-container{
+  text-align: center;
+  
+}
+
+.row{
+  text-align: center;
+  width: 30%;
+  justify-content: center;
+  align-self: center;
+}
+
+.skill{
+  text-align: center;
+}
+
+.bar {
+  
+  justify-content: center;
+}
+
+h2{
+  margin: 80px;
+  margin-top: 0%;
+
+}
+
+h3{
+  margin-top: 0px;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.headd{
+  display: flex;
+  justify-content: space-around;
+}
+
+#contact .text-container1 img{
+  height: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+section {
+  height: 100vh;
+  width: 100%;
+  padding: 0%;
+  margin: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.game .p{
+  text-align: center;
+  width: 60%;
+  
+  
+  
+}
+.game{
+  margin: 25px;
+}
+
+.container-fluid{
+  padding-right: 0px;
+    padding-left: 0px;
+}
